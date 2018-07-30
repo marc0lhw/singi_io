@@ -1,0 +1,10 @@
+service helloworld
+{
+	socket_type = stream
+	flags = REUSE
+	wait = no
+	user = root
+	server = /tmp/helloworld
+	disable = no
+}
+
