@@ -1,0 +1,2 @@
+#docker build --tag ubuntu_team3:0.1 .
+#docker run --cap-add=SYS_PTRACE -v /host/working/directory2:/usr/sharedData --name ubuntu_team3 --read-only -P -i -t -d ubuntu_team3:0.1
