@@ -22,13 +22,13 @@ sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_c
 RUN wget -P /tmp/ https://github.com/marc0lhw/singi_io/raw/master/helloworld && \
 chmod +x /tmp/helloworld && \
 wget -P /etc/xinetd.d/ https://raw.githubusercontent.com/marc0lhw/singi_io/master/docker/helloworld && \
-wget -O /etc/services https://raw.githubusercontent.com/marc0lhw/singi_io/master/docker/services
+wget -O /etc/services https://raw.githubusercontent.com/marc0lhw/singi_io/master/docker/services && \
+wget -P / https://raw.githubusercontent.com/marc0lhw/singi_io/master/docker/startsc.sh && \
+chmod +x /startsc.sh
 
 EXPOSE 80
 EXPOSE 22
 EXPOSE 9999
 
-ADD startsc.sh /
-RUN chmod +x /startsc.sh
 ENTRYPOINT ./startsc.sh
 
